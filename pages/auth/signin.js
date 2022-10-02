@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
-import { getProviders, signIn } from 'next-auth/react';
 import Image from 'next/image';
+import { getProviders, signIn } from 'next-auth/react';
 
 import logo from '../../public/assets/images/boogle-page-logo.png';
 
