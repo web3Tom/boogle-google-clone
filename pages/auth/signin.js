@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/Header';
+import Header from '../../components/Header';
 import Image from 'next/image';
 import { getProviders, signIn } from 'next-auth/react';
 
