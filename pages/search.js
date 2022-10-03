@@ -6,7 +6,7 @@ import Response from '../Response';
 import SearchResults from '../components/SearchResults';
 import ImageResults from '../components/ImageResults';
 
-export default function search({ results }) {
+export default function Search({ results }) {
   const router = useRouter();
 
   return (
@@ -14,9 +14,7 @@ export default function search({ results }) {
       <Head>
         <title>{router.query.term} search results</title>
       </Head>
-      {/* Search Header */}
       <SearchHeader />
-      {/* Search Results */}
       {router.query.searchType === 'image' ? (
         <ImageResults results={results} />
       ) : (
