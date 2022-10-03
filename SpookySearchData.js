@@ -1,0 +1,17 @@
+export const spookySearchData = [
+  'Michael Myers',
+  'Jason Voorhees',
+  'Freddy Krueger',
+  'Leatherface',
+  'Jigsaw',
+  'Pennywise',
+  'Chucky',
+  'Pinhead',
+  'Jaws',
+  'Hannibal Lecter',
+  'Regan MacNeil',
+  'Ghostface',
+  'The Creeper',
+  'Alien',
+  'Predator',
+];

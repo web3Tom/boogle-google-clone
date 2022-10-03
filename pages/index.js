@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import logo from '../public/assets/images/boogle-page-logo.png';
+import { spookySearchData } from '../SpookySearchData';
 import {
   MagnifyingGlassIcon,
   MicrophoneIcon,
@@ -20,6 +21,15 @@ export default function Home() {
     const term = searchInputRef.current.value;
     if (!term.trim()) return;
     router.push(`/search?term=${term.trim()}&searchType=`);
+  }
+
+  function randomSearch(event) {
+    event.preventDefault();
+    const max = spookySearchData.length;
+    const randomIndex = Math.floor(Math.random() * (max - 1) + 1);
+    let randomSearchTerm = spookySearchData[randomIndex];
+    if (!randomSearchTerm) return;
+    router.push(`/search?term=${randomSearchTerm}&searchType=image`);
   }
 
   return (
@@ -51,7 +61,9 @@ export default function Home() {
           <button className="btn" onClick={search}>
             Google Search
           </button>
-          <button className="btn">I&#39;m Feeling Spooky</button>
+          <button onClick={randomSearch} className="btn">
+            I&#39;m Feeling Spooky
+          </button>
         </div>
       </form>
       <Footer />
