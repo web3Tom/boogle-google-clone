@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import SearchHeader from '../components/SearchHeader';
 import Response from '../Response';
 import SearchResults from '../components/SearchResults';
+import ImageResults from '../components/ImageResults';
 
 export default function search({ results }) {
   console.log(results);
@@ -14,19 +15,21 @@ export default function search({ results }) {
       <Head>
         <title>{router.query.term} search results</title>
       </Head>
-
       {/* Search Header */}
       <SearchHeader />
-
       {/* Search Results */}
-      <SearchResults results={results} />
+      {router.query.searchType === 'image' ? (
+        <ImageResults results={results} />
+      ) : (
+        <SearchResults results={results} />
+      )}
     </div>
   );
 }
 
 export async function getServerSideProps(context) {
   const startIndex = context.query.start || '1';
-  const mockData = true;
+  const mockData = false;
   const data = mockData
     ? Response
     : await fetch(
