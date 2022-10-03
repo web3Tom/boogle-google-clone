@@ -10,3 +10,20 @@
     @apply bg-[#f8f9fa] p-3 rounded-md text-sm text-gray-800 hover:ring-1 hover:ring-gray-200 focus:outline-none active:ring-gray-300 hover:shadow-md;
   }
 }
+
+@layer base {
+  /* stroke-width: 2 is a browser default and can be overridden with class="stroke-1" etc. */
+  svg {
+    stroke-width: 2;
+  }
+
+  path,
+  circle,
+  ellipse,
+  line,
+  polygon,
+  polyline,
+  rect {
+    stroke-width: inherit;
+  }
+}
